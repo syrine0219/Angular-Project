@@ -1,0 +1,12 @@
+<div *ngIf="residence" class="residence-details">
+    <h2>{{ residence.name }}</h2>
+    <p><strong>Status:</strong> {{ residence.status }}</p>
+    <p><strong>Address:</strong> {{ residence.address }}</p>
+    <p><strong>Description:</strong> {{ residence.description }}</p>
+  </div>
+  
+  <div *ngIf="!residence" class="error">
+    <p>Residence not found! Redirecting...</p>
+  </div>
+  
+  
