@@ -1,1 +1,36 @@
-<p>add-residence works!</p>
+<form [formGroup]="residenceForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="name">Nom</label>
+      <input id="name" formControlName="name">
+      <div *ngIf="formControls['name'].invalid && formControls['name'].touched" class="error">
+        Nom est requis et doit contenir au moins 3 caractères.
+      </div>
+    </div>
+  
+    <div class="form-field">
+      <label for="address">Adresse</label>
+      <input id="address" formControlName="address">
+      <div *ngIf="formControls['address'].invalid && formControls['address'].touched" class="error">
+        Adresse est requise.
+      </div>
+    </div>
+  
+    <div class="form-field">
+      <label for="image">Image</label>
+      <input id="image" formControlName="image">
+      <div *ngIf="formControls['image'].invalid && formControls['image'].touched" class="error">
+        Image est requise.
+      </div>
+    </div>
+  
+    <div class="form-field">
+      <label for="status">Statut</label>
+      <input id="status" formControlName="status">
+      <div *ngIf="formControls['status'].invalid && formControls['status'].touched" class="error">
+        Statut est requis.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="residenceForm.invalid">Ajouter</button>
+  </form>
+  

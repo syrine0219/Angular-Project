@@ -1,54 +1,46 @@
-nav {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  .navbar {
-    background: #007bff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-  }
-  
-  .brand {
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .nav-links a {
-    margin-left: 20px;
-    font-size: 16px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .nav-links a:hover,
-  .nav-links a.active {
-    text-decoration: underline;
-  }
-    
+.navbar {
+  position: fixed; /* Fixe la barre en haut */
+  top: 0; /* Aligne en haut */
+  left: 0;
+  width: 100%; /* Prend toute la largeur */
+  background: #007bff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* S'assure que la navbar reste au-dessus */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+/* Ajustement pour éviter que le contenu soit caché sous la navbar */
+body {
+  padding-top: 60px; /* Ajuste selon la hauteur de ta navbar */
+}

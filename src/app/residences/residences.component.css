@@ -1,86 +1,82 @@
-/* Styles généraux */
+/* Conteneur principal */
+.residences-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Carte individuelle */
 .residence-card {
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 15px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-  
-    &:hover {
-      transform: scale(1.05);
-    }
-  
-    img {
-      width: 100%;
-      max-width: 250px;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-  }
-  
-  /* Boutons */
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.3s;
-  
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-  
-  /* Statuts */
-  .status {
-    font-weight: bold;
-    margin-top: 10px;
-  
-    &.available {
-      color: green;
-    }
-  
-    &.construction {
-      color: orange;
-    }
-  
-    &.sold {
-      color: red;
-    }
-  }
-  
-  /* Input de recherche */
-  .search-box {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  div {
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-    
+  width: 280px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.residence-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image */
+.residence-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Contenu */
+.residence-info {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Status */
+.status {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* Couleurs dynamiques pour le statut */
+.available {
+  color: #28a745;
+}
+
+.construction {
+  color: #ffc107;
+}
+
+.sold {
+  color: #dc3545;
+}
+
+/* Adresse */
+.address {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Boutons */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.buttons .btn {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.buttons .btn:hover {
+  opacity: 0.8;
+}

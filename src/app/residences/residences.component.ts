@@ -26,4 +26,8 @@ export class ResidencesComponent {
   viewDetails(residence: any) {
     this.router.navigate(['/residences', residence.id]);
   }
+
+  goToAddResidence() {
+    this.router.navigate(['/add-residence']);
+  }
 }

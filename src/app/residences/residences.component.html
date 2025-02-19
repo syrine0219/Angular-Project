@@ -1,23 +1,42 @@
-<div *ngFor="let residence of listResidences" class="residence-card">
-    <h3>{{ residence.name }}</h3>
-    <img [src]="residence.image" alt="{{ residence.name }}">
-  
-    <p class="status" 
-       [ngClass]="{
-         'available': residence.status === 'Disponible',
-         'construction': residence.status === 'En Construction',
-         'sold': residence.status === 'Vendu'
-       }">
-      {{ residence.status }}
-    </p>
-  
-    <button (click)="showLocation(residence.address)">Show Location</button>
-    <button (click)="addToFavorites(residence)">❤️ Like</button>
-  
-    <!-- ✅ Move this inside the loop -->
-    <button [routerLink]="['/apartments', residence.id]">View Apartments</button>
-  
-    <!-- ✅ Ensure this matches the correct list name -->
-    <button (click)="viewDetails(residence)">Details</button>
+<div class="residences-container">
+  <div *ngFor="let residence of listResidences" class="residence-card">
+    <!-- Image de la résidence -->
+    <img [src]="residence.image" alt="{{ residence.name }}" class="residence-image">
+
+    <!-- Informations -->
+    <div class="residence-info">
+      <h3>{{ residence.name }}</h3>
+
+      <p class="status" 
+         [ngClass]="{
+           'available': residence.status === 'Disponible',
+           'construction': residence.status === 'En Construction',
+           'sold': residence.status === 'Vendu'
+         }">
+        {{ residence.status }}
+      </p>
+
+      <p class="address">📍 {{ residence.address }}</p>
+
+      <!-- Boutons d'actions -->
+      <div class="buttons">
+        <button class="btn btn-info" (click)="showLocation(residence.address)">
+          📌 Show Location
+        </button>
+        
+        <button class="btn btn-danger" (click)="addToFavorites(residence)">
+          ❤️ Like
+        </button>
+
+        <button class="btn btn-success" [routerLink]="['/apartments', residence.id]">
+          🏢 View Apartments
+        </button>
+
+        <button class="btn btn-primary" (click)="viewDetails(residence)">
+          🔍 Details
+        </button>
+      </div>
+    </div>
   </div>
-  
+</div>
+<button (click)="goToAddResidence()">Ajouter une résidence</button>
